@@ -1,55 +1,72 @@
+/* Reset de márgenes y padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo global para el fondo */
 body, html {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1c1c2b;
-    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Color de fondo claro */
+    font-family: 'Roboto', sans-serif; /* Tipografía de Material Design */
     overflow: hidden;
 }
 
+/* Contenedor principal */
 .container {
     text-align: center;
-    color: white;
+    color: #333333; /* Color de texto oscuro para contraste */
     z-index: 1;
     position: absolute;
     max-width: 600px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
+    padding: 30px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: box-shadow 0.3s ease-in-out; /* Transición suave */
 }
 
+.container:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1); /* Aumenta la sombra al hacer hover */
+}
+
+/* Título principal */
 h1 {
     font-size: 48px;
     margin-bottom: 15px;
-    animation: glow 2s infinite alternate;
+    color: #1e88e5; /* Azul profesional */
+    letter-spacing: 1.2px; /* Espaciado entre letras */
 }
 
+/* Texto secundario */
 p {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 25px;
+    color: #666666; /* Texto en tono gris oscuro */
 }
 
+/* Bombilla animada */
 .lightbulb {
     font-size: 72px;
     animation: float 3s ease-in-out infinite;
+    color: #ffca28; /* Amarillo claro para la bombilla */
 }
 
+/* Animación de luz */
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+        text-shadow: 0 0 10px rgba(30, 136, 229, 0.7), 0 0 20px rgba(30, 136, 229, 0.5);
     }
     to {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+        text-shadow: 0 0 20px rgba(30, 136, 229, 1), 0 0 30px rgba(30, 136, 229, 0.8);
     }
 }
 
+/* Animación de la bombilla */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -58,12 +75,13 @@ p {
         transform: translateY(-20px);
     }
 }
+
+/* Canvas para WebGL */
 canvas {
-    position: fixed; /* Cambiado de absolute a fixed */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Ajusta el canvas a toda la ventana */
-    height: 100vh; /* Ajusta el canvas a toda la ventana */
-    z-index: -1; /* Mantén el canvas detrás del contenido */
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
-
