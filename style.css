@@ -58,12 +58,12 @@ p {
         transform: translateY(-20px);
     }
 }
-
 canvas {
-    position: absolute;
+    position: fixed; /* Cambiado de absolute a fixed */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    width: 100vw; /* Ajusta el canvas a toda la ventana */
+    height: 100vh; /* Ajusta el canvas a toda la ventana */
+    z-index: -1; /* Mantén el canvas detrás del contenido */
 }
+
